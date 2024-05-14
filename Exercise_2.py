@@ -37,12 +37,12 @@ def quickSort(arr, low, high):
     return
 
   pivotIndex = random.randint(low, high)  # select a random pivot index to improve worst case time complexity
-  newPivotIndex = partition(arr, low, high, pivotIndex) # partition the array arround the pivot index such that all lesser values are on left and bigger values are on right
-  quickSort(arr, low, newPivotIndex-1) # recurse on the left partition
-  quickSort(arr, newPivotIndex+1, high) # recurse on the right partition
+  newPivotPosition = partition(arr, low, high, pivotIndex) # partition the array arround the pivot index such that all lesser values are on left and bigger values are on right
+  quickSort(arr, low, newPivotPosition-1) # recurse on the left partition
+  quickSort(arr, newPivotPosition+1, high) # recurse on the right partition
 
 # Driver code to test above 
-arr = [10, 17, -8, 9, 1, 5] 
+arr = [10, 17, -8, 9, 1, 5, 2, 4, -3, 7, 32, -28, 20, 0]
 n = len(arr) 
 quickSort(arr,0,n-1) 
 print ("Sorted arr is:") 
